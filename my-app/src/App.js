@@ -5,6 +5,9 @@ export default function Board() {
   const [xIsNext, setNext] = useState(true);
 
   function handleClick(i) {
+    if (squares[i]) {
+      return;
+    }
     const newSquares = squares.slice();
     if (xIsNext) {
       newSquares[i] = "x";
