@@ -78,10 +78,16 @@ function calculateWinner(squares) {
 }
 
 export default function Game() {
+  const [xIsNext, setxIsNext] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquare = history[history.length - 1];
+
+  function handlePlay(currentSquare) {}
+
   return (
     <div className="game">
       <div className="game-board">
-        <Board />
+        <Board xIsNext={xIsNext} squares={currentSquare} onPlay={handlePlay} />
       </div>
       <div className="game-info">
         <ol>{/*TODO*/}</ol>
